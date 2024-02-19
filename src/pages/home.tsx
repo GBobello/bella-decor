@@ -4,7 +4,6 @@ import cabeceira from "../assets/cabeceira.jpg"
 
 export function Home() {
   return(
-    <>
       <div className="flex flex-col w-full">
         <Navbar /> 
         <div className="flex flex-col items-center bg-slate-100 w-full lg:h-720">
@@ -28,9 +27,7 @@ export function Home() {
               <img className="w-full h-full object-cover" src={cabeceira} alt="" />
             </div>      
           </div>
+        <Footer />
       </div>
-
-      <Footer />
-    </>
   )
 }
