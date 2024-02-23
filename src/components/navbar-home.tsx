@@ -6,12 +6,12 @@ import { useState } from "react";
 import { NavbarItems } from "./navbar-items";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 
-export function Navbar(){
+export function NavbarHome(){
 
   const [isVisible, setIsVisible] = useState(false) 
 
   return(
-    <nav className="w-full bg-transparent h-20 " >
+    <nav className="absolute w-full bg-transparent h-20" >
       <div className="flex  justify-between  w-full h-full max-w-7xl m-auto items-center px-4" >
         <Link to="/">
           <img src={logo} alt="Bella Decor" width={150} height={150} className="" />

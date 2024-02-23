@@ -1,11 +1,11 @@
 import { Footer } from "../components/footer";
-import { Navbar } from "../components/navbar";
+import { NavbarHome } from "../components/navbar-home";
 import cabeceira from "../assets/cabeceira.jpg"
 
 export function Home() {
   return(
       <div className="flex flex-col w-full">
-        <Navbar /> 
+        <NavbarHome /> 
         <div className="flex flex-col items-center bg-slate-100 w-full lg:h-720">
           <div className="h-full w-full items-center justify-center" >
             <img className="w-full object-cover h-full" src={cabeceira} alt="" />
