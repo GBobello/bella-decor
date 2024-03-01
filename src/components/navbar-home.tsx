@@ -4,7 +4,6 @@ import { Menu, X } from "lucide-react";
 import { NavBarMobile } from "./navbar-mobile";
 import { useState } from "react";
 import { NavbarItems } from "./navbar-items";
-import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { MediaButton } from "./media-button";
 
 export function NavbarHome() {
