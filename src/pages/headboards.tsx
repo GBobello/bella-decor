@@ -1,7 +1,7 @@
 import { CardProducts } from "../components/card-products";
 import { Footer } from "../components/footer";
 import { Navbar } from "../components/navbar";
-import headboards from "./src/assets/cabeceira.jpg";
+import headboards from "../assets/cabeceira.jpg";
 
 export function Headboards() {
   return (

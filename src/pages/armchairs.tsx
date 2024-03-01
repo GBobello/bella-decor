@@ -1,7 +1,7 @@
 import { Footer } from "../components/footer";
 import { Navbar } from "../components/navbar";
 import { CardProducts } from "../components/card-products";
-import armchairs from "./src/assets/poltrona.jpg";
+import armchairs from "../assets/poltrona.jpg";
 
 export function ArmChairs() {
   return (
