@@ -1,6 +1,7 @@
 import { CardProducts } from "../components/card-products";
 import { Footer } from "../components/footer";
 import { Navbar } from "../components/navbar";
+import headboards from "./src/assets/cabeceira.jpg";
 
 export function Headboards() {
   return (
@@ -11,12 +12,12 @@ export function Headboards() {
       </span>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-[500px]">
-        <CardProducts title="Cabeceiras" image="./src/assets/cabeceira.jpg" />
-        <CardProducts title="Cabeceiras" image="./src/assets/cabeceira.jpg" />
-        <CardProducts title="Cabeceiras" image="./src/assets/cabeceira.jpg" />
-        <CardProducts title="Cabeceiras" image="./src/assets/cabeceira.jpg" />
-        <CardProducts title="Cabeceiras" image="./src/assets/cabeceira.jpg" />
-        <CardProducts title="Cabeceiras" image="./src/assets/cabeceira.jpg" />
+        <CardProducts title="Cabeceiras" image={headboards} />
+        <CardProducts title="Cabeceiras" image={headboards} />
+        <CardProducts title="Cabeceiras" image={headboards} />
+        <CardProducts title="Cabeceiras" image={headboards} />
+        <CardProducts title="Cabeceiras" image={headboards} />
+        <CardProducts title="Cabeceiras" image={headboards} />
       </div>
       <Footer />
     </div>
