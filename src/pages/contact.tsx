@@ -1,16 +1,44 @@
 import { Footer } from "../components/footer";
 import { Navbar } from "../components/navbar";
-import { Input } from "../components/input";
 import { MdSend } from "react-icons/md";
 import { MediaButton } from "../components/media-button";
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 export function Contact() {
-  function handleSubmit() {
-    alert("Mensagem enviada com sucesso!");
+
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    if (name === '' || email === '' || message === '') {
+      alert('Preencha todos os campos!')
+      return
+    }
+
+    const templateParams = {
+      from_name: name,
+      message: message,
+      email: email,
+    }
+
+
+    emailjs.send("service_qubc688", "template_fzb1i1s", templateParams, "pfTunrSBq0S0uxZs1")
+    .then((response) => {
+      console.log("EMAIL ENVIADO!", response.status, response.text);
+      setName('')
+      setEmail('')
+      setMessage('')
+    }, (err) => {
+      console.log("ERRO: ", err);
+    })
   }
 
   return (
-    <div className="flex flex-col w-full overflow-x-auto">
+    <div className="flex flex-col w-full">
       <Navbar />
       <span className="w-full p-4 mt-10 text-center text-2xl lg:text-4xl font-bold mb-10">
         Fale conosco
@@ -44,18 +72,30 @@ export function Contact() {
 
         <div className="flex flex-col p-4 w-full h-full">
           <h1 className="text-lg font-semibold ml-2">Envie-nos uma mensagem</h1>
-          <form className="flex flex-col pt-8 w-full h-full" action="submit">
-            <Input
-              name="name"
-              type="name"
+          <form
+            className="flex flex-col pt-8 w-full h-full"
+            onSubmit={handleSubmit}
+          >
+            <input
+              className="bg-slate-200 p-2 m-2 rounded-md leading-6 resize-none outline-none shadow-lg text-start"
+              type="text"
               placeholder="Digite seu nome completo"
+              onChange={(event) => {setName(event.target.value)}}
+              value={name}
             />
-            <Input name="email" type="email" placeholder="Digite seu e-mail" />
+            <input
+              className="bg-slate-200 p-2 m-2 rounded-md leading-6 resize-none outline-none shadow-lg text-start"
+              type="text"
+              placeholder="Digite seu e-mail"
+              onChange={(event) => {setEmail(event.target.value)}}
+              value={email}
+            />
+
             <textarea
               className="bg-slate-200 p-2 m-2 rounded-md leading-6 resize-none outline-none shadow-lg text-start h-48"
-              name="message"
-              id="message"
               placeholder="Digite sua mensagem"
+              onChange={(event) => {setMessage(event.target.value)}}
+              value={message}
             ></textarea>
             <button
               type="button"
@@ -67,7 +107,6 @@ export function Contact() {
           </form>
         </div>
       </div>
-
       <Footer />
     </div>
   );
