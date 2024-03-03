@@ -11,7 +11,7 @@ export function Contact() {
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
 
-  function handleSubmit(event) {
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     if (name === '' || email === '' || message === '') {
@@ -98,9 +98,8 @@ export function Contact() {
               value={message}
             ></textarea>
             <button
-              type="button"
+              type="submit"
               className="flex shadow-lg items-center justify-center border-2 h-10 w-40 ml-2 mt-10"
-              onClick={handleSubmit}
             >
               Enviar <MdSend className="ml-2" />
             </button>
