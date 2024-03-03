@@ -53,6 +53,7 @@ export function CarouselProduct({ slides }: CarouselProductProps) {
         {slides.map((s, i) => {
           return (
             <div
+              id={s}
               onClick={() => {setCurrent(i)}}
               key={"cirecle" + i}
               className={`rounded-full shadow-lg cursor-pointer w-3 h-3 ${
