@@ -7,9 +7,7 @@ interface CardProductsProps {
     id: string;
     title: string;
     price: number;
-    image_1: string;
-    image_2: string;
-    image_3: string;
+    images: Array<string>;
     description: string;
   };
 }
@@ -24,7 +22,7 @@ export function CardProducts({ product }: CardProductsProps) {
             <div className="shadow-2xl aspect-square h-64 rounded-2xl overflow-hidden flex justify-center items-center">
               <img
                 className="w-full object-cover h-full"
-                src={product.image_1}
+                src={product.images[0]}
                 alt={product.title}
               />
             </div>
@@ -44,7 +42,7 @@ export function CardProducts({ product }: CardProductsProps) {
             <div>
               <h1 className="font-medium text-5xl mb-2">{product.title}</h1>
               <div className="bg-red-500 w-96 h-96">
-                <CarouselProduct slides={[product.image_1, product.image_2, product.image_3]}/>
+                <CarouselProduct slides={product.images}/>
               </div>
               <h2 className="text-2xl mt-10">{product.description}</h2>
               <h2>R${product.price}</h2>

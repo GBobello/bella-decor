@@ -23,27 +23,33 @@ const CABECEIRAS = [
     id: "1",
     title: "Poah",
     price: 1000,
-    image_1: cabeceira_1,
-    image_2: cabeceira_2,
-    image_3: cabeceira_3,
+    images: [
+      cabeceira_1,
+      cabeceira_2,
+      cabeceira_3,
+    ],
     description: "lorem ipsum dolor sit amet",
   },
   {
     id: "2",
     title: "Paris",
     price: 2000,
-    image_1: cabeceira_4,
-    image_2: cabeceira_5,
-    image_3: cabeceira_6,
+    images: [
+      cabeceira_6,
+      cabeceira_4,
+      cabeceira_5,
+    ],
     description: "lorem ipsum dolor sit amet",
   },
   {
     id: "3",
     title: "Kelly",
     price: 3000,
-    image_1: cabeceira_7,
-    image_2: cabeceira_8,
-    image_3: cabeceira_9,
+    images: [
+      cabeceira_7,
+      cabeceira_8,
+      cabeceira_9,
+    ],
     description: "lorem ipsum dolor sit amet",
   }
 ]
@@ -53,29 +59,36 @@ const POLTRONAS = [
     id: "1",
     title: "Havanna",
     price: 1000,
-    image_1: poltrona_1,
-    image_2: poltrona_2,
-    image_3: poltrona_3,
+    images: [
+      poltrona_1,
+      poltrona_2,
+      poltrona_3,
+    ],
     description: "lorem ipsum dolor sit amet",
   },
   {
     id: "2",
     title: "Dubai",
     price: 2000,
-    image_1: poltrona_4,
-    image_2: poltrona_5,
-    image_3: poltrona_6,
+    images: [
+      poltrona_4,
+      poltrona_5,
+      poltrona_6,
+    ],
     description: "lorem ipsum dolor sit amet",
   },
   {
     id: "3",
     title: "Web",
     price: 3000,
-    image_1: poltrona_7,
-    image_2: poltrona_8,
-    image_3: poltrona_9,
+    images: [
+      poltrona_7,
+      poltrona_8,
+      poltrona_9,
+      poltrona_1,
+    ],
     description: "lorem ipsum dolor sit amet",
-  }
+  },
 ]
 
 export {POLTRONAS, CABECEIRAS}
