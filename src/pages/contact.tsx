@@ -44,7 +44,7 @@ export function Contact() {
         Fale conosco
       </span>
 
-      <div className=" grid grid-cols-1 md:grid-cols-2 w-full auto-rows-[500px]">
+      <div className=" grid grid-cols-1 md:grid-cols-2 w-full auto-rows-[500px] lg:px-4 xl:px-20">
         <div className="flex flex-col p-4 w-full h-full">
           <h1 className="text-lg font-semibold">Localização</h1>
           <span>Rua tal com a esquina aquela, 893</span>

@@ -13,7 +13,6 @@ interface CardProductsProps {
 }
 
 export function CardProducts({ product }: CardProductsProps) {
-
   return (
     <Dialog.Root>
       <Dialog.Trigger>
@@ -40,12 +39,14 @@ export function CardProducts({ product }: CardProductsProps) {
 
           <div className="w-full h-full flex flex-col justify-center items-center">
             <div>
-              <h1 className="font-medium text-5xl mb-2">{product.title}</h1>
-              <div className="bg-red-500 w-96 h-96">
-                <CarouselProduct slides={product.images}/>
+              <h1 className="px-4 font-medium text-5xl mb-2">
+                {product.title}
+              </h1>
+              <div className="w-96 h-96 px-4">
+                <CarouselProduct slides={product.images} />
               </div>
-              <h2 className="text-2xl mt-10">{product.description}</h2>
-              <h2>R${product.price}</h2>
+              <h2 className="px-4 text-2xl mt-10">{product.description}</h2>
+              <h2 className="px-4">R${product.price}</h2>
             </div>
           </div>
         </Dialog.Content>
