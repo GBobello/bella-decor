@@ -33,7 +33,7 @@ export function CardProducts({ product }: CardProductsProps) {
       <Dialog.Portal>
         <Dialog.Overlay className="inset-0 fixed bg-black/50" />
         <Dialog.Content className="fixed inset-0 md:inset-auto  md:left-1/2 md:top-1/2 overflow-hidden md:-translate-x-1/2 md:-translate-y-1/2 md:max-w-[640px] w-full md:h-[60vh] bg-white md:rounded-md flex flex-col outline-none">
-          <Dialog.DialogClose className="absolute right-0 top-0 p-1.5 text-slate-950">
+          <Dialog.DialogClose className="absolute right-5 top-5 lg:top-0 lg:right-0 md:top-0 md:right-0 p-1.5 text-slate-950">
             <X className="size-5" />
           </Dialog.DialogClose>
 
