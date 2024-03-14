@@ -12,6 +12,7 @@
   "dependencies": {
     "@emailjs/browser": "^4.2.0",
     "@radix-ui/react-dialog": "^1.0.5",
+    "axios": "^1.6.7",
     "date-fns": "^3.3.1",
     "lucide-react": "^0.331.0",
     "react": "^18.2.0",

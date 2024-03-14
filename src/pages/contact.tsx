@@ -6,35 +6,42 @@ import { useState } from "react";
 import emailjs from "@emailjs/browser";
 
 export function Contact() {
-
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [message, setMessage] = useState('')
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    if (name === '' || email === '' || message === '') {
-      alert('Preencha todos os campos!')
-      return
+    if (name === "" || email === "" || message === "") {
+      alert("Preencha todos os campos!");
+      return;
     }
 
     const templateParams = {
       from_name: name,
       message: message,
       email: email,
-    }
+    };
 
-
-    emailjs.send("service_qubc688", "template_fzb1i1s", templateParams, "pfTunrSBq0S0uxZs1")
-    .then((response) => {
-      console.log("EMAIL ENVIADO!", response.status, response.text);
-      setName('')
-      setEmail('')
-      setMessage('')
-    }, (err) => {
-      console.log("ERRO: ", err);
-    })
+    emailjs
+      .send(
+        "service_qubc688",
+        "template_fzb1i1s",
+        templateParams,
+        "pfTunrSBq0S0uxZs1"
+      )
+      .then(
+        (response) => {
+          console.log("EMAIL ENVIADO!", response.status, response.text);
+          setName("");
+          setEmail("");
+          setMessage("");
+        },
+        (err) => {
+          console.log("ERRO: ", err);
+        }
+      );
   }
 
   return (
@@ -80,29 +87,37 @@ export function Contact() {
               className="bg-slate-200 p-2 m-2 rounded-md leading-6 resize-none outline-none shadow-lg text-start"
               type="text"
               placeholder="Digite seu nome completo"
-              onChange={(event) => {setName(event.target.value)}}
+              onChange={(event) => {
+                setName(event.target.value);
+              }}
               value={name}
             />
             <input
               className="bg-slate-200 p-2 m-2 rounded-md leading-6 resize-none outline-none shadow-lg text-start"
               type="text"
               placeholder="Digite seu e-mail"
-              onChange={(event) => {setEmail(event.target.value)}}
+              onChange={(event) => {
+                setEmail(event.target.value);
+              }}
               value={email}
             />
 
             <textarea
               className="bg-slate-200 p-2 m-2 rounded-md leading-6 resize-none outline-none shadow-lg text-start h-48"
               placeholder="Digite sua mensagem"
-              onChange={(event) => {setMessage(event.target.value)}}
+              onChange={(event) => {
+                setMessage(event.target.value);
+              }}
               value={message}
             ></textarea>
-            <button
-              type="submit"
-              className="flex shadow-lg items-center justify-center border-2 h-10 w-40 ml-2 mt-10"
-            >
-              Enviar <MdSend className="ml-2" />
-            </button>
+            <div className="flex w-full justify-center mt-10 p-2">
+              <button
+                type="submit"
+                className="flex shadow-lg hover:bg-lime-700 hover:text-white hover:border-lime-400 items-center justify-center border-2 h-10 w-full"
+              >
+                Enviar <MdSend className="ml-2" />
+              </button>
+            </div>
           </form>
         </div>
       </div>

@@ -1,9 +1,34 @@
+import { useEffect, useState } from "react";
 import { CardProducts } from "../components/card-products";
 import { Footer } from "../components/footer";
 import { Navbar } from "../components/navbar";
-import { CABECEIRAS } from "../data/products";
+import axios from 'axios';
 
-export function Headboards() {
+interface CardProductsProps {
+  product: {
+    id: string;
+    title: string;
+    price: number;
+    images: Array<string>;
+    description: string;
+  };
+}
+
+export const Headboards = () => {
+  const [cabeceiras, setCabeceiras] = useState<CardProductsProps[]>([])
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('https://bella-decor-api.vercel.app/cabeceiras')
+        setCabeceiras(response.data)
+      } catch (error) {
+        console.error('Erro ao buscar os dados da API: ', error)
+      }
+    }
+
+    fetchData()
+  }, [])
+
   return (
     <div className="flex flex-col h-full w-full">
       <Navbar />
@@ -12,7 +37,7 @@ export function Headboards() {
       </span>
 
       <div className="grid grid-cols-1 outline-none md:grid-cols-2 lg:grid-cols-3 auto-rows-[500px]">
-        {CABECEIRAS.map((item) => {
+        {cabeceiras.map((item) => {
           return <CardProducts key={item.id} product={item} />;
         })}
       </div>
