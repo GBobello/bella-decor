@@ -113,7 +113,7 @@ export function Contact() {
             <div className="flex w-full justify-center mt-10 p-2">
               <button
                 type="submit"
-                className="flex shadow-lg hover:bg-lime-700 hover:text-white hover:border-lime-400 items-center justify-center border-2 h-10 w-full"
+                className="flex rounded-md shadow-lg hover:bg-lime-700 hover:text-white hover:border-lime-400 items-center justify-center border-2 h-10 w-full"
               >
                 Enviar <MdSend className="ml-2" />
               </button>

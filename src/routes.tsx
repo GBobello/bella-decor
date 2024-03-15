@@ -3,6 +3,7 @@ import { Home } from './pages/home'
 import { Headboards } from './pages/headboards'
 import { Contact } from './pages/contact'
 import { ArmChairs } from './pages/armchairs'
+import { Admin } from './pages/admin'
 
 export default function MainRoutes() {
   return(
@@ -11,6 +12,7 @@ export default function MainRoutes() {
       <Route path='/cabeceiras' element={<Headboards />} />
       <Route path='/poltronas' element={<ArmChairs />} />
       <Route path='/contato' element={<Contact />} />
+      <Route path='/admin' element={<Admin />} />
     </Routes>
   )
 }
